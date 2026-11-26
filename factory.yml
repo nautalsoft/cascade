@@ -1,0 +1,18 @@
+version: 1
+name: Cascade
+tagline: Takes a ticket graph from assignment to verified delivery, with copyable prompts and one offline HTML tracker.
+use_cases: [feature, new-project]
+harnesses: [claude-code, codex]
+demo:
+  type: image
+  path: docs/assets/tracker-preview.png
+pipeline:
+  - id: plan
+    name: Plan the ready frontier
+    files: [SKILL.md, references/tracker-and-prompts.md]
+  - id: dispatch
+    name: Dispatch with guards
+    files: [references/dispatch-guards.md, references/shared-repository.md]
+  - id: execute
+    name: Execute and recover
+    files: [references/execution-and-recovery.md, references/durable-checkpoints.md]
